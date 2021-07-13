@@ -65,7 +65,7 @@ jobs:
                 --polaris.project.name=siguser8/java-sec-code --polaris.url=${{secrets.POLARIS_SERVER_URL}} --polaris.token=${{secrets.POLARIS_ACCESS_TOKEN}} 
                 --blackduck.project.name=github-io-sample:1.0.0 --blackduck.url=${{secrets.BLACKDUCK_URL}} --blackduck.api.token=${{secrets.BLACKDUCK_TOKEN}}
         stage: "WORKFLOW"
-    
+     
     - name: Upload SARIF file
       if: ${{steps.prescription.outputs.sastScan == 'true' }}
       uses: github/codeql-action/upload-sarif@v1
